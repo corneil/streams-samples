@@ -1,0 +1,5 @@
+
+allprojects {
+    group 'com.github.corneil'
+    version '1.0-SNAPSHOT'
+}
