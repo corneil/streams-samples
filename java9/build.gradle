@@ -1,0 +1,29 @@
+plugins {
+    id "me.champeau.gradle.jmh" version "0.4.5"
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'me.champeau.gradle.jmh'
+
+sourceCompatibility = 9.0
+
+mainClassName = 'com.github.corneil.streams.Streams9Examples'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+jmh {
+    verbosity = logger.infoEnabled ? 'EXTRA' : 'NORMAL'
+    benchmarkMode = ['thrpt']
+    warmupIterations = 5
+    iterations = 10
+    threads = 1
+    fork = 1
+    jmhVersion = '1.19'
+}

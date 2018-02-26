@@ -1,0 +1,5 @@
+rootProject.name = 'streams-examples'
+
+include ':java8'
+include ':java9'
+
